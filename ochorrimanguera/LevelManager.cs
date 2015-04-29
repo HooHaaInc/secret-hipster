@@ -84,14 +84,15 @@ namespace BountyHunter
 				for(int x = enemies.Count -1; x>=0; --x){
 					enemies [x].Update (gameTime);
 					if(!enemies[x].Dead){
-						if(player.CollisionRectangle.Intersects (enemies[x].CollisionRectangle)){
+						if (player.VulnerableRectangle.Intersects (enemies [x].CollisionRectangle))
+							player.Kill ();
 							//Console.Write (player.WorldBottomCenter.Y + " < " + enemies [x].WorldTopCenter.Y);
-							if(player.WorldCenter.Y < enemies[x].WorldCenter.Y){
-								player.Jump ();
-								enemies[x].PlayAnimation ("die");
-								enemies[x].Dead = true;
-							}else player.Kill();
+						else if(player.HitBox.Intersects (enemies[x].CollisionRectangle)){
+							player.Jump ();
+							enemies[x].PlayAnimation ("die");
+							enemies[x].Dead = true;
 						}
+
 					}else if(!enemies[x].Enabled) enemies.RemoveAt(x);
 				}
 			}

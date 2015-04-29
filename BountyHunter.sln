@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BountyHunter", "ochorrimanguera\BountyHunter.csproj", "{19D43D63-0077-4AA9-B3D9-DFFA09F9619B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TileEngine", "TileEngine\TileEngine.csproj", "{DFAB2594-7140-44F9-A9B3-F9AF18D5A8DE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LevelEditor", "LevelEditor\LevelEditor.csproj", "{772D6512-E488-4F16-955A-2929BEDF24D0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x86 = Debug|x86
+		Release|x86 = Release|x86
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{19D43D63-0077-4AA9-B3D9-DFFA09F9619B}.Debug|x86.ActiveCfg = Debug|x86
+		{19D43D63-0077-4AA9-B3D9-DFFA09F9619B}.Debug|x86.Build.0 = Debug|x86
+		{19D43D63-0077-4AA9-B3D9-DFFA09F9619B}.Release|x86.ActiveCfg = Release|x86
+		{19D43D63-0077-4AA9-B3D9-DFFA09F9619B}.Release|x86.Build.0 = Release|x86
+		{772D6512-E488-4F16-955A-2929BEDF24D0}.Debug|x86.ActiveCfg = Debug|x86
+		{772D6512-E488-4F16-955A-2929BEDF24D0}.Debug|x86.Build.0 = Debug|x86
+		{772D6512-E488-4F16-955A-2929BEDF24D0}.Release|x86.ActiveCfg = Release|x86
+		{772D6512-E488-4F16-955A-2929BEDF24D0}.Release|x86.Build.0 = Release|x86
+		{DFAB2594-7140-44F9-A9B3-F9AF18D5A8DE}.Debug|x86.ActiveCfg = Debug|x86
+		{DFAB2594-7140-44F9-A9B3-F9AF18D5A8DE}.Debug|x86.Build.0 = Debug|x86
+		{DFAB2594-7140-44F9-A9B3-F9AF18D5A8DE}.Release|x86.ActiveCfg = Release|x86
+		{DFAB2594-7140-44F9-A9B3-F9AF18D5A8DE}.Release|x86.Build.0 = Release|x86
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = ochorrimanguera\BountyHunter.csproj
+	EndGlobalSection
+EndGlobal

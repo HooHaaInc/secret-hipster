@@ -14,6 +14,8 @@ namespace BountyHunter
 		private bool dead = false;
 		private int score = 0;
 		private int livesRemaining = 3;
+		private Rectangle hitBox = new Rectangle(16, 36, 21, 12);
+		private Texture2D rect;
 
 		public int LivesRemaining {
 			get { return livesRemaining; }
@@ -29,9 +31,35 @@ namespace BountyHunter
 			get { return dead; }
 		}
 
+		public Rectangle HitBox{
+			get { return new Rectangle(
+				(int)worldLocation.X + hitBox.X,
+				(int)worldLocation.Y + hitBox.Y,
+				hitBox.Width,
+				hitBox.Height); 
+			}
+		}
+
+		public override Rectangle CollisionRectangle{
+			get{ return new Rectangle (
+					(int)worldLocation.X + collisionRectangle.X,
+					(int)worldLocation.Y + collisionRectangle.Y,
+					collisionRectangle.Width,
+					collisionRectangle.Height + 12
+				);}
+		}
+
+		public Rectangle VulnerableRectangle{
+			get{
+				return base.CollisionRectangle;
+			}
+		}
+
 		#region Constructor
 		public Player (ContentManager content)
 		{
+			rect = content.Load < Texture2D >(@"rect");
+
 			animations.Add ("idle",
 			                new AnimationStrip (content.Load<Texture2D> (@"idle"),
 			                                   50, "idle"));
@@ -53,7 +81,7 @@ namespace BountyHunter
 			animations ["die"].LoopAnimation = false;
 			frameWidth = 48;
 			frameHeight = 48;
-			collisionRectangle = new Rectangle (16, 7, 21, 43);
+			collisionRectangle = new Rectangle (16, 7, 21, 28);
 			drawDepth = 0.825f;
 			codeBasedBlocks = false;
 			PlayAnimation ("idle");
@@ -90,8 +118,24 @@ namespace BountyHunter
 					PlayAnimation (newAnimation);
 			}
 			velocity += fallSpeed;
+			if (velocity.Y > 600)
+				velocity.Y = 600;
 			repositionCamera ();
 			base.Update (gameTime);
+		}
+
+		public override void Draw (SpriteBatch spriteBatch)
+		{
+			base.Draw (spriteBatch);
+			//Debug c:
+			/*spriteBatch.Draw (
+				rect,
+				VulnerableRectangle,
+				Color.Green);
+			spriteBatch.Draw (
+				rect,
+				HitBox,
+				Color.Red);*/
 		}
 
 		public void Jump(){
@@ -109,6 +153,7 @@ namespace BountyHunter
 			PlayAnimation ("idle");
 			dead = false;
 		}
+
 		#endregion
 
 		#region Helper Methods

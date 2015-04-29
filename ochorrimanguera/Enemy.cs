@@ -25,7 +25,7 @@ namespace BountyHunter
 			animations ["die"].LoopAnimation = false;
 			frameWidth = 32;
 			frameHeight = 32;
-			collisionRectangle = new Rectangle (6, 6, 21, 16);
+			collisionRectangle = new Rectangle (6, 0, 21, 16);
 			worldLocation = new Vector2 (cellX * TileMap.TileWidth, cellY * TileMap.TileHeight);
 			enabled = true;
 			codeBasedBlocks = true;

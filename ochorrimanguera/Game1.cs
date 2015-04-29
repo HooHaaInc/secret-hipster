@@ -166,12 +166,12 @@ namespace BountyHunter
 					"Lives: " + player.LivesRemaining,
 					livesPosition,
 					Color.White);*/
-				if (gameState == GameState.GameOver)
-					spriteBatch.DrawString (
+				//if (gameState == GameState.GameOver)					
+					/*spriteBatch.DrawString (
 						pericles8,
 						"G A M E   O V E R !",
 						gameOverPosition,
-						Color.White);
+						Color.White);*/
 			}
 			spriteBatch.End ();
             base.Draw(gameTime);

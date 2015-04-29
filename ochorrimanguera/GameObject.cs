@@ -71,7 +71,7 @@ namespace BountyHunter
 			}
 		}
 
-		public Rectangle CollisionRectangle{
+		public virtual Rectangle CollisionRectangle{
 			get { return new Rectangle (
 					(int)worldLocation.X + collisionRectangle.X,
 					(int)worldLocation.Y + collisionRectangle.Y,
@@ -79,6 +79,11 @@ namespace BountyHunter
 					collisionRectangle.Height);
 			}
 		}
+
+		public Vector2 Velocity{
+			get { return velocity; }
+		}
+
 		#endregion
 		public GameObject ()
 		{
